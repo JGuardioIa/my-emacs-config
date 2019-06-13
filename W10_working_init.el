@@ -7,7 +7,13 @@
 ;; You may delete these explanatory comments.
 (require 'package)
 
-(setq inhibit-startup-message t)        ; Disable startup message 
+(setq inhibit-startup-message t)        ; Disable startup message
+
+;; Save all backup files in one directory
+(setq backup-directory-alist '(("." . "C:/Users/usuario/Documentos/EmacsBackups")))
+
+;; Python 2.7 Interpreter
+(setq python-shell-interpreter "C:/Python27/python")
 
 (setq
  package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -90,5 +96,8 @@
 (if (file-exists-p "/home/jaime/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")
   (load-file "/home/jaime/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el"))
 ; @end(30600943)@ - End of automatically added lines.
+
+
+
 
 
