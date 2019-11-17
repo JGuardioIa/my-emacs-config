@@ -7,6 +7,12 @@
 
 (setq inhibit-startup-message t)        ; Disable startup message 
 
+;; Save all backup files in one directory
+(setq backup-directory-alist '(("." . "~/Documents/EmacsBackups")))
+
+;; Python 2.7 Interpreter
+(setq python-shell-interpreter "/bin/python2.7")
+
 (setq
  package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                     ("org" . "http://orgmode.org/elpa/")
@@ -22,10 +28,10 @@
 (require 'use-package)
 
 ;; Ciao
-(if (file-exists-p "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")
-    (load-file "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el"))
-(require 'ciao)
-(add-to-list 'auto-mode-alist '("\\.pl\\'" . ciao-mode))
+; (if (file-exists-p "~/.emacs.d/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")
+;     (load-file "~/.emacs.d/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el"))
+; (require 'ciao)
+; (add-to-list 'auto-mode-alist '("\\.pl\\'" . ciao-mode))
 
 (use-package ido
   :ensure
@@ -51,15 +57,15 @@
     )
   )
 
-
-(use-package haskell-mode
-  :ensure t
-  :mode "\\.hs\\'"
-  :config
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc)
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-  )
+; Haskell
+;(use-package haskell-mode
+;  :ensure t
+;  :mode "\\.hs\\'"
+;  :config
+;  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc)
+;  (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+;  )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -82,11 +88,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
- 
-
-; @begin(30600943)@ - Do not edit these lines - added automatically!
-(if (file-exists-p "/home/jaime/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")
-  (load-file "/home/jaime/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el"))
-; @end(30600943)@ - End of automatically added lines.
-
-
